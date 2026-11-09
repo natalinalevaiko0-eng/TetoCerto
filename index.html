@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teto Certo | Controle de Obras</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">⌂</div>
+            <div>
+                <h2>Teto Certo</h2>
+                <span>Gestão de Obras</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#inicio" class="active">▦ Dashboard</a>
+            <a href="#etapas">▤ Etapas da obra</a>
+            <a href="#despesas">R$ Despesas</a>
+            <a href="#notas">▧ Notas fiscais</a>
+            <a href="#alertas">♧ Alertas</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Organize sua obra.</p>
+            <strong>Construa com controle!</strong>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar" id="inicio">
+            <div>
+                <span class="welcome">BEM-VINDO AO TETO CERTO</span>
+                <h1>Visão geral da obra</h1>
+                <p>Acompanhe seus investimentos e mantenha tudo sob controle.</p>
+            </div>
+
+            <div class="user">
+                <div class="user-icon">TC</div>
+                <div>
+                    <strong>Administrador</strong>
+                    <span>Minha obra</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="project-info">
+            <div>
+                <span>PROJETO ATUAL</span>
+                <h2>Reforma Residencial</h2>
+                <p>Obra residencial • 2026</p>
+            </div>
+            <div class="project-status">● Em andamento</div>
+        </section>
+
+        <section class="summary">
+            <div class="card">
+                <span>Orçamento previsto</span>
+                <h2 id="orcamento">R$ 80.000,00</h2>
+                <small>Limite total da obra</small>
+            </div>
+
+            <div class="card">
+                <span>Total realizado</span>
+                <h2 id="totalGasto">R$ 0,00</h2>
+                <small>Despesas registradas</small>
+            </div>
+
+            <div class="card">
+                <span>Saldo disponível</span>
+                <h2 id="saldo">R$ 80.000,00</h2>
+                <small>Valor restante</small>
+            </div>
+
+            <div class="card">
+                <span>Percentual utilizado</span>
+                <h2 id="percentual">0%</h2>
+                <div class="progress">
+                    <div id="barraGeral"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-grid">
+
+            <div class="panel" id="etapas">
+                <div class="section-heading">
+                    <div>
+                        <h2>Orçamento por etapa</h2>
+                        <p>Previsto x realizado</p>
+                    </div>
+                </div>
+
+                <div id="listaEtapas"></div>
+            </div>
+
+            <div class="panel chart-panel">
+                <h2>Distribuição dos gastos</h2>
+                <p>Visualização dos custos da obra</p>
+                <canvas id="grafico"></canvas>
+            </div>
+
+        </section>
+
+        <section class="panel" id="despesas">
+            <div class="section-heading">
+                <div>
+                    <h2>Registrar despesa</h2>
+                    <p>Adicione os gastos realizados na obra.</p>
+                </div>
+            </div>
+
+            <form id="formDespesa">
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Descrição</label>
+                        <input type="text" id="descricao"
+                            placeholder="Ex: Compra de cimento" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Categoria</label>
+                        <select id="categoria" required>
+                            <option value="">Selecione</option>
+                            <option value="Materiais">Materiais</option>
+                            <option value="Mão de obra">Mão de obra</option>
+                            <option value="Acabamento">Acabamento</option>
+                            <option value="Elétrica">Elétrica</option>
+                            <option value="Hidráulica">Hidráulica</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Etapa da obra</label>
+                        <select id="etapaDespesa" required>
+                            <option value="Fundação">Fundação</option>
+                            <option value="Alvenaria">Alvenaria</option>
+                            <option value="Instalações">Instalações</option>
+                            <option value="Acabamento">Acabamento</option>
+                            <option value="Pintura">Pintura</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Valor (R$)</label>
+                        <input type="number" id="valor"
+                            placeholder="0,00" min="0.01"
+                            step="0.01" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Data</label>
+                        <input type="date" id="data" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    + Adicionar despesa
+                </button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Últimas despesas</h2>
+                    <p>Histórico de movimentações financeiras.</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Etapa</th>
+                            <th>Data</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaDespesas">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-grid">
+
+            <div class="panel" id="notas">
+                <h2>Notas fiscais</h2>
+                <p>Armazene os comprovantes da sua obra.</p>
+
+                <label for="arquivo" class="upload-area">
+                    <span>＋</span>
+                    <strong>Enviar nota fiscal</strong>
+                    <small>PDF, PNG ou JPG</small>
+                </label>
+
+                <input type="file" id="arquivo"
+                    accept=".pdf,.png,.jpg,.jpeg"
+                    hidden>
+
+                <ul id="listaNotas" class="receipt-list"></ul>
+            </div>
+
+            <div class="panel" id="alertas">
+                <h2>Alertas de custos</h2>
+                <p>Fique atento aos limites do orçamento.</p>
+
+                <div id="mensagemAlerta" class="alert-box">
+                    <strong>✓ Tudo sob controle!</strong>
+                    <p>Seus gastos estão dentro do orçamento.</p>
+                </div>
+
+                <label class="limit-label">
+                    Alertar quando atingir (%)
+                </label>
+
+                <input type="number" id="limiteAlerta"
+                    value="80" min="1" max="100">
+
+                <button class="secondary-button" id="salvarLimite">
+                    Salvar limite
+                </button>
+            </div>
+
+        </section>
+
+        <footer>
+            <strong>Teto Certo</strong> — Controle inteligente para sua obra.
+            <p>© 2026 Teto Certo. Todos os direitos reservados.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
