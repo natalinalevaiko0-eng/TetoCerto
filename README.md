@@ -20,7 +20,7 @@ A plataforma permitirá comparar os valores previstos com os gastos realizados e
 
 A proposta busca substituir controles manuais, como cadernos e mensagens de WhatsApp, por uma ferramenta mais organizada, acessível e intuitiva, auxiliando profissionais da construção civil e proprietários na tomada de decisões financeiras.
 
-2. Pesquisa com o público-alvo:
+Pesquisa com o público-alvo:
 
 1. Como o senhor controla os gastos de uma obra atualmente?
 Eu anoto os gastos num caderno e guardo as notas dos materiais. Também passo as informações pelo WhatsApp para o dono da obra. O problema é que, na correria, alguma despesa pode ficar sem registrar.
