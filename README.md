@@ -1,9 +1,28 @@
-Segmento escolhido:  
+# 🏠 TetoCerto
+### Portal de Controle de Custos de Obras e Reformas Residenciais
 
-9. Portal de Controle de Custos de Obras e Reformas Residenciais: Acompanhamento
-visual de orçamento previsto vs. realizado por etapa, armazenamento de notas fiscais e
-alertas de teto de custos.
+## 📋 Informações do Projeto
 
+| Informação | Descrição |
+|:---|:---|
+| **Instituição** | Universidade Positivo |
+| **Curso** | Sistemas de Informação |
+| **Disciplina** | Design |
+| **Ano** | 2026 |
+| **Projeto** | TetoCerto |
+| **Segmento** | Controle de Custos de Obras e Reformas Residenciais |
+
+1. Segmento escolhido
+
+9. Portal de Controle de Custos de Obras e Reformas Residenciais
+
+O projeto TetoCerto tem como objetivo desenvolver um portal digital que facilite o planejamento, o registro e o acompanhamento financeiro de obras e reformas residenciais.
+
+A plataforma permitirá comparar os valores previstos com os gastos realizados em cada etapa da construção, como fundação, alvenaria, instalações e acabamento. Além disso, oferecerá funcionalidades para organizar notas fiscais, registrar despesas e emitir alertas quando os custos estiverem próximos dos limites estabelecidos.
+
+A proposta busca substituir controles manuais, como cadernos e mensagens de WhatsApp, por uma ferramenta mais organizada, acessível e intuitiva, auxiliando profissionais da construção civil e proprietários na tomada de decisões financeiras.
+
+2. Pesquisa com o público-alvo
 Pesquisa:
 
 1. Como o senhor controla os gastos de uma obra atualmente?
